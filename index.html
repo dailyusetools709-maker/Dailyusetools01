@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Tools Hub | Essential Tools Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-light: #4895ef;
+            --secondary: #3f37c9;
+            --accent: #7209b7;
+            --success: #4cc9f0;
+            --warning: #f72585;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #0f172a;
+            --text-light: #475569;
+            --muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --transition: all 0.3s ease;
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg); 
+            color: var(--text); 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background: var(--card);
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo { 
+            font-size: 24px; 
+            font-weight: 800; 
+            color: var(--primary); 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .logo-icon {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        .header-btns { 
+            display: flex; 
+            gap: 12px; 
+        }
+        
+        .icon-btn { 
+            background: #f1f5f9; 
+            border: none; 
+            padding: 10px 16px; 
+            border-radius: var(--radius-sm); 
+            cursor: pointer; 
+            font-weight: 600; 
+            font-size: 14px; 
+            color: var(--text);
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .icon-btn:hover { 
+            background: var(--primary); 
+            color: white; 
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        .icon-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero { 
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 60px 20px 50px; 
+            text-align: center; 
+            color: white; 
+            border-radius: 0 0 40px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .search-wrapper { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            position: relative; 
+            z-index: 1;
+        }
+        
+        .search-wrapper input { 
+            width: 100%; 
+            padding: 18px 24px; 
+            border-radius: var(--radius); 
+            border: none; 
+            outline: none; 
+            font-size: 16px; 
+            box-shadow: var(--shadow-lg);
+            background: rgba(255, 255, 255, 0.95);
+            transition: var(--transition);
+        }
+        
+        .search-wrapper input:focus {
+            background: white;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* --- MAIN CONTENT --- */
+        .content { 
+            max-width: 1400px; 
+            margin: 40px auto; 
+            padding: 0 20px; 
+        }
+        
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text);
+        }
+        
+        .section-title i {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 30px;
+        }
+        
+        /* --- SEARCH RESULTS SECTION --- */
+        .search-results-section {
+            display: none;
+            margin-bottom: 50px;
+        }
+        
+        .search-results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .search-results-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text);
+        }
+        
+        .search-query {
+            color: var(--primary);
+            font-weight: 800;
+        }
+        
+        .clear-search-btn {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .clear-search-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .search-results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .search-result-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+        }
+        
+        .search-result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+        
+        .search-result-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 22px;
+        }
+        
+        .search-result-name {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        
+        .search-result-category {
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 20px;
+        }
+        
+        .search-result-desc {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        
+        .search-match {
+            background-color: #ffeb3b;
+            color: #333;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        
+        /* --- FEATURED TOOLS SECTION --- */
+        .featured-tools {
+            margin: 40px 0 60px;
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .featured-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+        }
+        
+        .featured-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+        
+        .featured-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+            color: white;
+        }
+        
+        .featured-name {
+            font-weight: 800;
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        
+        .featured-desc {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        
+        /* --- TOOL CATEGORIES --- */
+        .categories-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+            gap: 25px; 
+            margin-top: 25px; 
+        }
+        
+        .category-card { 
+            background: var(--card); 
+            padding: 25px; 
+            border-radius: var(--radius); 
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+        
+        .card-head { 
+            font-weight: 700; 
+            margin-bottom: 20px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            color: var(--primary); 
+            font-size: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+        
+        .card-head i {
+            font-size: 24px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .tool-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .tool-link { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            padding: 14px 16px; 
+            color: var(--text); 
+            text-decoration: none; 
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            font-size: 15px;
+            font-weight: 500;
+        }
+        
+        .tool-link:hover { 
+            background: #f1f5f9; 
+            color: var(--primary); 
+            padding-left: 22px;
+        }
+        
+        .tool-link span {
+            color: var(--muted);
+            font-size: 18px;
+            transition: var(--transition);
+        }
+        
+        .tool-link:hover span {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        /* --- FOOTER --- */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 50px 20px 30px;
+            margin-top: 80px;
+            border-radius: 40px 40px 0 0;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-logo span {
+            color: #4cc9f0;
+        }
+        
+        .footer-about {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #cbd5e1;
+            max-width: 300px;
+        }
+        
+        .footer-heading {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+        
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .header-btns .icon-btn:not(.home-btn) { 
+                display: none; 
+            }
+            
+            .hero h1 { 
+                font-size: 32px; 
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .categories-grid { 
+                grid-template-columns: 1fr; 
+            }
+            
+            .featured-grid,
+            .search-results-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-about {
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 40px 15px 35px;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .featured-card,
+            .search-result-card {
+                padding: 25px 20px;
+            }
+            
+            .featured-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+            
+            .search-results-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+        
+        /* --- NO RESULTS MESSAGE --- */
+        .no-results {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--muted);
+            font-size: 18px;
+            grid-column: 1 / -1;
+        }
+        
+        .no-results i {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--border);
+            display: block;
+        }
+        
+        /* --- FADE IN ANIMATION --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        /* --- MOBILE SEARCH BUTTON --- */
+        .mobile-search-btn {
+            display: none;
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(67, 97, 238, 0.4);
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            transition: var(--transition);
+        }
+        
+        .mobile-search-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(67, 97, 238, 0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-search-btn {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="#" class="logo">
+        <div class="logo-icon">
+            <i class="fas fa-toolbox"></i>
+        </div>
+        Daily<span>Tools</span>Hub 
+    </a>
+    <div class="header-btns">
+        <a href="index.html" class="icon-btn active home-btn">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <button class="icon-btn" onclick="toggleSearch()">
+            <i class="fas fa-search"></i> Search
+        </button>
+        <a href="#categories-section" class="icon-btn">
+            <i class="fas fa-th-large"></i> Categories
+        </a>
+    </div>
+</header>
+
+<div class="hero">
+    <h1>Essential Tools for Everyday Tasks</h1>
+    <p>Access 50+ tools for finance, health, math, and daily conversions</p>
+    <div class="search-wrapper">
+        <input type="text" placeholder="Search for tools (e.g., mortgage, BMI, percentage)..." id="toolSearch">
+        <div class="search-icon" onclick="document.getElementById('toolSearch').focus()">
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    
+    <!-- Search Results Section -->
+    <div class="search-results-section" id="searchResultsSection">
+        <div class="search-results-header">
+            <div class="search-results-title">
+                Search Results for: <span class="search-query" id="searchQueryText"></span>
+            </div>
+            <button class="clear-search-btn" onclick="clearSearch()">
+                <i class="fas fa-times"></i> Clear Search
+            </button>
+        </div>
+        <div class="search-results-grid" id="searchResultsGrid">
+            <!-- Search results will be dynamically added here -->
+        </div>
+    </div>
+    
+    <!-- Featured Tools Section -->
+    <div class="featured-tools" id="featuredToolsSection">
+        <h2 class="section-title">
+            <i class="fas fa-star"></i> Most Popular Tools
+        </h2>
+        <div class="featured-grid" id="featuredTools">
+            <!-- Featured tools will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Tool Categories -->
+    <h2 class="section-title" id="categories-section">
+        <i class="fas fa-th-large"></i> Tool Categories
+    </h2>
+    <div class="categories-grid" id="categoriesContainer">
+        <!-- Categories will be dynamically added here -->
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <div class="footer-logo">Daily Tools Hub</div>
+            <p class="footer-about">Your all-in-one platform for tools and conversions. We provide accurate, easy-to-use tools for finance, health, math, and everyday tasks.</p>
+        </div>
+        <div class="footer-col">
+            <h3 class="footer-heading">Categories</h3>
+            <div class="footer-links">
+                <a href="#categories-section">Finance Calculators</a>
+                <a href="#categories-section">Health Calculators</a>
+                <a href="#categories-section">Math Calculators</a>
+                <a href="#categories-section">Everyday Tools</a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h3 class="footer-heading">Quick Links</h3>
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#categories-section">All Tools</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h3 class="footer-heading">Legal</h3>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Disclaimer</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2026 Daily Tools Hub. All rights reserved. | Designed for multi-device compatibility
+    </div>
+</footer>
+
+<!-- Mobile Search Button -->
+<button class="mobile-search-btn" onclick="toggleSearch()">
+    <i class="fas fa-search"></i>
+</button>
+        
+<script>
+    // All tools data
+    const allTools = [
+        // Finance Tools
+        { name: "Mortgage Calculator", category: "Finance", description: "Calculate monthly mortgage payments, interest, and amortization schedules", icon: "fa-home", link: "Mortgage_Calculator.html" },
+        { name: "Loan Calculator", category: "Finance", description: "Calculate loan payments, total interest, and repayment schedules", icon: "fa-hand-holding-usd", link: "Loan_Calculator.html" },
+        { name: "Interest Calculator", category: "Finance", description: "Calculate simple and compound interest on investments or loans", icon: "fa-percentage", link: "Interest_Calculator.html" },
+        { name: "Payment Calculator", category: "Finance", description: "Calculate payment schedules for loans and credit cards", icon: "fa-credit-card", link: "Payment_Calculator.html" },
+        { name: "Retirement Calculator", category: "Finance", description: "Plan your retirement savings and calculate future income", icon: "fa-piggy-bank", link: "Retirement_Calculator.html" },
+        
+        // Health Tools
+        { name: "BMI Calculator", category: "Health", description: "Calculate your Body Mass Index and understand your health status", icon: "fa-heartbeat", link: "BMI_Calculator.html" },
+        { name: "Calorie Burn Calculator", category: "Health", description: "Estimate calories burned during various exercises and activities", icon: "fa-fire", link: "Calorie_Burn_Calculator.html" },
+        { name: "Ideal Weight Calculator", category: "Health", description: "Calculate your ideal weight based on height, age, and body type", icon: "fa-weight", link: "Ideal_Weight_Calculator.html" },
+        { name: "BMR Tracker", category: "Health", description: "Calculate your Basal Metabolic Rate and daily calorie needs", icon: "fa-chart-line", link: "BMR_Tracker.html" },
+        { name: "Body Fat Calculator", category: "Health", description: "Estimate your body fat percentage using different methods", icon: "fa-user-circle", link: "Body_Fat_Calculator.html" },
+        { name: "Water Intake Calculator", category: "Health", description: "Calculate your daily recommended water intake", icon: "fa-tint", link: "Water_Intake_Calculator.html" },
+        
+        // Math Tools
+        { name: "Percentage Calculator", category: "Math", description: "Calculate percentages, discounts, and percentage changes easily", icon: "fa-percent", link: "Percentage_Calculator.html" },
+        { name: "Algebra Calculator", category: "Math", description: "Solve algebraic equations and expressions", icon: "fa-square-root-alt", link: "Algebra_Calculator.html" },
+        { name: "Triangle Solver", category: "Math", description: "Calculate triangle sides, angles, area, and perimeter", icon: "fa-shapes", link: "Triangle_Solver.html" },
+        { name: "Fraction Calculator", category: "Math", description: "Add, subtract, multiply, and divide fractions", icon: "fa-divide", link: "Fraction_Calculator.html" },
+        { name: "Statistics Calculator", category: "Math", description: "Calculate mean, median, mode, and standard deviation", icon: "fa-chart-bar", link: "Statistics_Calculator.html" },
+        
+        // Everyday Tools
+        { name: "Age Calculator", category: "Everyday", description: "Calculate age in years, months, weeks, and days", icon: "fa-birthday-cake", link: "Age_Calculator.html" },
+        { name: "Password Generator", category: "Everyday", description: "Generate secure passwords with customizable options", icon: "fa-key", link: "Secure_Password_Generator.html" },
+        { name: "GPA Calculator", category: "Everyday", description: "Calculate Grade Point Average for school or college", icon: "fa-graduation-cap", link: "GPA_Calculator.html" },
+        { name: "Currency Converter", category: "Everyday", description: "Convert between 150+ currencies with real-time exchange rates", icon: "fa-exchange-alt", link: "Currency_Converter.html" },
+        { name: "Tip Calculator", category: "Everyday", description: "Calculate tips for restaurants and service providers", icon: "fa-utensils", link: "Tip_Calculator.html" },
+        { name: "Unit Converter", category: "Everyday", description: "Convert between different units of measurement", icon: "fa-balance-scale", link: "Unit_Converter.html" },
+        { name: "Time Zone Converter", category: "Everyday", description: "Convert time between different time zones worldwide", icon: "fa-globe", link: "Time_Zone_Converter.html" },
+        { name: "Date Calculator", category: "Everyday", description: "Calculate days between dates or add/subtract days", icon: "fa-calendar-alt", link: "Date_Calculator.html" }
+    ];
+    
+    // Categories data
+    const categories = [
+        {
+            name: "Finance",
+            icon: "fa-university",
+            tools: ["Mortgage Calculator", "Loan Calculator", "Interest Calculator", "Payment Calculator", "Retirement Calculator"]
+        },
+        {
+            name: "Health",
+            icon: "fa-heartbeat",
+            tools: ["BMI Calculator", "Calorie Burn Calculator", "Ideal Weight Calculator", "BMR Tracker", "Body Fat Calculator", "Water Intake Calculator"]
+        },
+        {
+            name: "Math",
+            icon: "fa-calculator",
+            tools: ["Percentage Calculator", "Algebra Calculator", "Triangle Solver", "Fraction Calculator", "Statistics Calculator"]
+        },
+        {
+            name: "Everyday",
+            icon: "fa-tools",
+            tools: ["Age Calculator", "Password Generator", "GPA Calculator", "Currency Converter", "Tip Calculator", "Unit Converter", "Time Zone Converter", "Date Calculator"]
+        }
+    ];
+    
+    // Featured tools
+    const featuredTools = [
+        "Mortgage Calculator",
+        "BMI Calculator", 
+        "Percentage Calculator",
+        "Currency Converter",
+        "Password Generator",
+        "Age Calculator"
+    ];
+    
+    // Search Logic
+    document.getElementById('toolSearch').addEventListener('keyup', function(e){
+        let query = e.target.value.toLowerCase().trim();
+        
+        if (query === '') {
+            clearSearch();
+            return;
+        }
+        
+        // Update search query text
+        document.getElementById('searchQueryText').textContent = query;
+        
+        // Show search results section
+        document.getElementById('searchResultsSection').style.display = 'block';
+        
+        // Hide featured tools section
+        document.getElementById('featuredToolsSection').style.display = 'none';
+        
+        // Hide categories section
+        document.getElementById('categories-section').style.display = 'none';
+        document.getElementById('categoriesContainer').style.display = 'none';
+        
+        // Find matching tools
+        const matchingTools = allTools.filter(tool => {
+            return tool.name.toLowerCase().includes(query) || 
+                   tool.category.toLowerCase().includes(query) || 
+                   tool.description.toLowerCase().includes(query);
+        });
+        
+        // Sort by relevance (name matches first, then category, then description)
+        matchingTools.sort((a, b) => {
+            const aNameMatch = a.name.toLowerCase().includes(query);
+            const bNameMatch = b.name.toLowerCase().includes(query);
+            const aCategoryMatch = a.category.toLowerCase().includes(query);
+            const bCategoryMatch = b.category.toLowerCase().includes(query);
+            
+            if (aNameMatch && !bNameMatch) return -1;
+            if (!aNameMatch && bNameMatch) return 1;
+            if (aCategoryMatch && !bCategoryMatch) return -1;
+            if (!aCategoryMatch && bCategoryMatch) return 1;
+            return 0;
+        });
+        
+        // Display search results
+        displaySearchResults(matchingTools, query);
+        
+        // Scroll to search results
+        document.getElementById('searchResultsSection').scrollIntoView({behavior: 'smooth'});
+    });
+    
+    function displaySearchResults(tools, query) {
+        const resultsGrid = document.getElementById('searchResultsGrid');
+        resultsGrid.innerHTML = '';
+        
+        if (tools.length === 0) {
+            resultsGrid.innerHTML = `
+                <div class="no-results">
+                    <i class="fas fa-search"></i>
+                    <p>No tools found for "<strong>${query}</strong>". Try another search term.</p>
+                </div>
+            `;
+            return;
+        }
+        
+        tools.forEach((tool, index) => {
+            // Highlight matching text in name and description
+            const highlightedName = highlightText(tool.name, query);
+            const highlightedDesc = highlightText(tool.description, query);
+            
+            const toolElement = document.createElement('a');
+            toolElement.href = tool.link;
+            toolElement.className = 'search-result-card fade-in';
+            toolElement.style.animationDelay = `${index * 0.05}s`;
+            toolElement.innerHTML = `
+                <div class="search-result-icon">
+                    <i class="fas ${tool.icon}"></i>
+                </div>
+                <div class="search-result-category">${tool.category}</div>
+                <div class="search-result-name">${highlightedName}</div>
+                <div class="search-result-desc">${highlightedDesc}</div>
+            `;
+            
+            toolElement.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert(`Opening ${tool.name}...`);
+                // In real app: window.location.href = tool.link;
+            });
+            
+            resultsGrid.appendChild(toolElement);
+        });
+    }
+    
+    function highlightText(text, query) {
+        if (!query) return text;
+        
+        const regex = new RegExp(`(${query})`, 'gi');
+        return text.replace(regex, '<span class="search-match">$1</span>');
+    }
+    
+    function clearSearch() {
+        document.getElementById('toolSearch').value = '';
+        document.getElementById('searchResultsSection').style.display = 'none';
+        document.getElementById('featuredToolsSection').style.display = 'block';
+        document.getElementById('categories-section').style.display = 'block';
+        document.getElementById('categoriesContainer').style.display = 'grid';
+        
+        // Scroll to top
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    
+    function toggleSearch() {
+        document.getElementById('toolSearch').focus();
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    
+    // Initialize Featured Tools
+    function initializeFeaturedTools() {
+        const featuredGrid = document.getElementById('featuredTools');
+        featuredGrid.innerHTML = '';
+        
+        featuredTools.forEach(toolName => {
+            const tool = allTools.find(t => t.name === toolName);
+            if (!tool) return;
+            
+            const toolElement = document.createElement('a');
+            toolElement.href = tool.link;
+            toolElement.className = 'featured-card';
+            toolElement.innerHTML = `
+                <div class="featured-icon">
+                    <i class="fas ${tool.icon}"></i>
+                </div>
+                <div class="featured-name">${tool.name}</div>
+                <div class="featured-desc">${tool.description}</div>
+            `;
+            
+            toolElement.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert(`Opening ${tool.name}...`);
+            });
+            
+            featuredGrid.appendChild(toolElement);
+        });
+    }
+    
+    // Initialize Categories
+    function initializeCategories() {
+        const categoriesContainer = document.getElementById('categoriesContainer');
+        categoriesContainer.innerHTML = '';
+        
+        categories.forEach(category => {
+            const categoryElement = document.createElement('div');
+            categoryElement.className = 'category-card';
+            
+            let toolsHTML = '';
+            category.tools.forEach(toolName => {
+                const tool = allTools.find(t => t.name === toolName);
+                if (tool) {
+                    toolsHTML += `
+                        <a href="${tool.link}" class="tool-link">${tool.name} <span>></span></a>
+                    `;
+                }
+            });
+            
+            categoryElement.innerHTML = `
+                <div class="card-head">
+                    <span><i class="fas ${category.icon}"></i> ${category.name}</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="tool-list">
+                    ${toolsHTML}
+                </div>
+            `;
+            
+            // Add click events to tool links
+            categoryElement.querySelectorAll('.tool-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const toolName = this.textContent.replace('>', '').trim();
+                    alert(`Opening ${toolName}...`);
+                });
+            });
+            
+            categoriesContainer.appendChild(categoryElement);
+        });
+    }
+    
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeFeaturedTools();
+        initializeCategories();
+        
+        // Add smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Focus search on page load if URL has search parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchParam = urlParams.get('search');
+        if (searchParam) {
+            document.getElementById('toolSearch').value = searchParam;
+            document.getElementById('toolSearch').dispatchEvent(new Event('keyup'));
+        }
+    });
+</script>
+
+</body>
+</html>
